@@ -647,7 +647,7 @@
             <div class="col-lg-4 info">
               <i class="ri-map-pin-line"></i>
               <h4>Localité:</h4>
-              <p>A108 Adam Street<br>New York, NY 535022</p>
+              <p>Abidjan, Angrée<br>Pharmacie Saint Viateur</p>
             </div>
 
             <div class="col-lg-4 info mt-4 mt-lg-0">
@@ -663,28 +663,69 @@
             </div>
           </div>
         </div>
+        <!-- Message de succes en cas d'envois  -->
+        <div class="container">
+            @if(Session::has('success'))
+              <div class="alert alert-success">
+                  {{Session::get('success')}}
+              </div>
+            @endif
+        
+        </div>
+        <form action="{{ route('contact.store') }}"  class="p-4" method="post">
+           @csrf
 
-        <form action="" method="post" role="form" class="php-email-form">
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom" required>
+              <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'error' : '' }}" id="name" placeholder="Votre nom">
+              <!-- Error -->
+                @if ($errors->has('name'))
+                   <div class="error">
+                       {{ $errors->first('name') }}
+                   </div>
+                @endif   
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Votre email" required>
+              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email" placeholder="Votre email">
+                @if ($errors->has('email'))
+                    <div class="error">
+                        {{ $errors->first('email') }}
+                    </div>
+                @endif  
             </div>
           </div>
+
+          <div class="row mt-2">
+            <div class="col-md-6 form-group">
+             <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject" id="subject" placeholder="Votre subjet">
+             @if ($errors->has('subject'))
+                <div class="error">
+                    {{ $errors->first('subject') }}
+                </div>
+              @endif
+            </div>
+
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="number" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="subject" placeholder="Votre numero téléphone">
+              @if ($errors->has('phone'))
+                <div class="error">
+                    {{ $errors->first('phone') }}
+                </div>
+              @endif
+              
+            </div>
+          </div>
+
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Votre subjet" required>
+            <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="5" placeholder="Votre message complet"></textarea>
+            @if ($errors->has('message'))
+                <div class="error">
+                    {{ $errors->first('message') }}
+                </div>
+              @endif
           </div>
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Votre message complet" required></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Chargement...</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Envoyer le massage</button></div>
+
+          <div class="text-center"><button type="submit" name="send" class="btn orange fw-bold mt-2">Envoyer le massage</button></div>
         </form>
 
       </div>

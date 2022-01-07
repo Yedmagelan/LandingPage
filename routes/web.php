@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LandingPageController;
+use Illuminate\Mail\Mailable;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Front.index');
-});
+Route::get('/', [LandingPageController::class, 'showForm']);
+
+Route::post('/', [LandingPageController::class, 'storeForm'])->name('contact.store');
