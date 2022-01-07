@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\DashbordController;
 use Illuminate\Mail\Mailable;
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,9 @@ use Illuminate\Mail\Mailable;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/* ==========Route pour gerer le form de contact========= */
 Route::get('/', [LandingPageController::class, 'showForm']);
-
 Route::post('/', [LandingPageController::class, 'storeForm'])->name('contact.store');
+
+/* ==========Route pour gerer Dashbord========= */
+Route::get('/dashbord', [DashbordController::class, 'ListeCont']);
