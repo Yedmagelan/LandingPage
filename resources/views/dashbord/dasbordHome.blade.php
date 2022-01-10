@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Dashbord Ci Event </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <link rel="stylesheet" href="./admin/vendor/owl-carousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./admin/vendor/owl-carousel/css/owl.theme.default.min.css">
-    <link href="./admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-    <link href="./admin/css/style.css" rel="stylesheet">
+    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+    <link rel="stylesheet" href="{{ asset('admin/vendor/owl-carousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/vendor/owl-carousel/css/owl.theme.default.min.css') }}">
+    <link href="{{ asset('admin/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
 
 
@@ -178,8 +178,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text">Gestion fil de Contact</span></a>
                        <ul aria-expanded="false">
-                           <li><a href="./email-inbox">Boite de reception</a></li>
-                           <li><a href="./email-liste">Creer Contact</a></li>
+                           <li><a href="{{ url('dashbord') }}">Boite de reception</a></li>
+                           <li><a href="{{ url('envoyer-email') }}">Creer Contact</a></li>
                        </ul>
                     </li>
                     <li class="nav-label">Nos Pages</li>
@@ -227,35 +227,35 @@
     </div>
 
     <!-- Required vendors -->
-    <script src="./admin/vendor/global/global.min.js"></script>
-    <script src="./admin/js/quixnav-init.js"></script>
-    <script src="./admin/js/custom.min.js"></script>
+    <script src="{{ asset('admin/vendor/global/global.min.js') }}"></script>
+    <script src="{{ asset('admin/js/quixnav-init.js') }}"></script>
+    <script src="{{ asset('admin/js/custom.min.js') }}"></script>
 
 
     <!-- Vectormap -->
-    <script src="./admin/vendor/raphael/raphael.min.js"></script>
-    <script src="./admin/vendor/morris/morris.min.js"></script>
+    <script src="{{ asset('admin/vendor/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/morris/morris.min.js') }}"></script>
 
 
-    <script src="./admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="./admin/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="{{ asset('admin/vendor/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 
-    <script src="./admin/vendor/gaugeJS/dist/gauge.min.js"></script>
+    <script src="{{ asset('admin/vendor/gaugeJS/dist/gauge.min.js') }}"></script>
 
     <!--  flot-chart js -->
-    <script src="./admin/vendor/flot/jquery.flot.js"></script>
-    <script src="./admin/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="{{ asset('admin/vendor/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('admin/vendor/flot/jquery.flot.resize.js') }}"></script>
 
     <!-- Owl Carousel -->
-    <script src="./admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('admin/vendor/owl-carousel/js/owl.carousel.min.js') }}"></script>
 
     <!-- Counter Up -->
-    <script src="./admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
-    <script src="./admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-    <script src="./admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/jqvmap/js/jquery.vmap.usa.js') }}"></script>
+    <script src="{{ asset('admin/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 
 
-    <script src="./admin/js/dashboard/dashboard-1.js"></script>
+    <script src="{{ asset('admin/js/dashboard/dashboard-1.js') }}"></script>
 
 </body>
 

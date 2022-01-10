@@ -26,26 +26,27 @@
         <div class="card-body">
 
                 <div class="table-responsive">
-                    <table class="table table-hover ">
+                    <table class="table striped ">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Nom</th>    
                                 <th>Email</th>
                                 <th>Téléphone<th>
-                                <th>Subjet</th>
-                                <th>Message</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach ($contacts as $row)
                              <tr>
+                                 <a href="">
                                  <td>{{ $row->id }}</td>
                                  <td>{{ $row->name }}</td>
                                  <td>{{ $row->email }}</td>
                                  <td>{{ $row->phone }}</td>
                                  <td>{{ $row->subject }}</td>
-                                 <td>{{ $row->message }}</td>
+                                 <td> <a href="{{ url('email-details/'.$row->id) }}" class="btn btn-info"> <i class="ti-eye"></i> </a></td>
+                                 <td><a href="" class="btn btn-danger"> <i class="ti-trash"></i> </a></td>
                              </tr>
                          @endforeach    
                         </tbody>
