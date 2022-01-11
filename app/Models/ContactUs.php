@@ -13,10 +13,8 @@ class ContactUs extends Model
         'email', 
         'phone', 
         'subject', 
-        'message'
+        'message',
+        'status'
     ];
 
-    // public function category(){
-    //     return $this->belongsTo(Category::class, 'category_id');
-    // }
 }

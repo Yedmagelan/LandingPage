@@ -22,6 +22,7 @@ class DashbordController extends Controller
   //  Afficher message par details
   public function readmail($contact_us_id){
     $contact = ContactUs::findOrFail($contact_us_id);
+    ContactUs::findOrFail($contact_us_id)->update(['status' => 0]);
     return view('dashbord.page.read-email',compact('contact'));
 }
 
@@ -54,6 +55,11 @@ Mail::to($request->email)->send(new repondreMail($value));
 
 }
 
+  // Suppression de messagerie
+  public function destroy($contact_us_id){
+    ContactUs::findOrFail($contact_us_id)->delete();
+    return Redirect()->back()->with('delete',' La suppresion est validée');
+}
 
 
       

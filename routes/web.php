@@ -20,6 +20,7 @@ Route::post('/', [LandingPageController::class, 'storeForm'])->name('contact.sto
 
 /* ==========Route pour gerer Dashbord========= */
 Route::get('/dashbord', [DashbordController::class, 'ListeCont']);
+Route::get('/delete/{id}', [DashbordController::class, 'destroy']);
 Route::get('/email-details/{id}', [DashbordController::class, 'readmail']);
 Route::get('/repondre-mail/{id}', [DashbordController::class, 'RepondreMail']);
 Route::post('/repondre-mail', [DashbordController::class, 'repondre'])->name('repondre.store');

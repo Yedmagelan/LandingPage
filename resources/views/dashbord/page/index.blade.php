@@ -21,6 +21,14 @@
 <!-- row -->
    <div class="row">
      <div class="col-lg-12"> 
+     @if(session('delete'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+         <strong>{{session('delete')}}</strong>
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+           </button>
+        </div>
+    @endif
       <div class="card">
       <div class="card-title p-4"><h4 class="badge badge-primary">Boite de reception </h4>  </div>
         <div class="card-body">
@@ -37,16 +45,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                             @php
+                                 $i = 1;
+                             @endphp
                         @foreach ($contacts as $row)
-                             <tr>
-                                 <a href="">
-                                 <td>{{ $row->id }}</td>
+                             <tr class="@if($row->status== 1)
+                                          bg-lu
+                                        @endif">
+                                 <td>{{ $i++ }}</td>
                                  <td>{{ $row->name }}</td>
                                  <td>{{ $row->email }}</td>
                                  <td>{{ $row->phone }}</td>
                                  <td>{{ $row->subject }}</td>
                                  <td> <a href="{{ url('email-details/'.$row->id) }}" class="btn btn-info"> <i class="ti-eye"></i> </a></td>
-                                 <td><a href="" class="btn btn-danger"> <i class="ti-trash"></i> </a></td>
+                                 <td><a href="{{ url('delete/'.$row->id) }}" class="btn btn-danger" onclick="return confirm('Voulez-vous suprimer ?')"> <i class="ti-trash"></i> </a></td>
                              </tr>
                          @endforeach    
                         </tbody>

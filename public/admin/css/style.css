@@ -64,6 +64,7 @@
 @import url(./../vendor/aos/css/aos.min.css);
 @import url(./../vendor/perfect-scrollbar/css/perfect-scrollbar.css);
 @import url(./../vendor/metismenu/css/metisMenu.min.css);
+
 .gradient_one {
   background-image: linear-gradient(to right, rgba(186, 1, 181, 0.85) 0%, rgba(103, 25, 255, 0.85) 100%); }
 
@@ -19402,5 +19403,8 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
     background-color: transparent; }
     [data-theme-version="dark"] .footer .copyright p {
       color: #fff; }
-
+.bg-lu{
+  background-color: #D4E0CE;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
