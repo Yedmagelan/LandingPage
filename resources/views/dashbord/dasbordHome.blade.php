@@ -42,11 +42,11 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="./admin/images/logo.png" alt="">
-                <img class="logo-compact" src="./admin/images/logo-text.png" alt="">
-                <img class="brand-title" src="./admin/images/logo-text.png" alt="">
+        <div class="nav-header bg-light">
+            <a href="{{ url('dashbord') }}" class="brand-logo">
+                <!-- <img class="logo-abbr" src="{{ asset('assets/img/logo.png') }}" alt=""> -->
+                <!-- <img class="logo-compact" src="{{ asset('assets/img/logo.png') }}" alt=""> -->
+                <img class="brand-title" src="{{ asset('assets/img/logo.png') }}" alt="">
             </a>
 
             <div class="nav-control">

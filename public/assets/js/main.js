@@ -1,4 +1,9 @@
-
+/**
+* Template Name: MyBiz - v4.7.0
+* Template URL: https://bootstrapmade.com/mybiz-free-business-bootstrap-theme/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 (function() {
   "use strict";
 
@@ -239,3 +244,26 @@
   });
 
 })()
+
+
+// Compteur rapide 
+
+const counters = document.querySelectorAll(".counter");
+const speed = 200;
+
+counters.forEach((counter) => {
+  const updateCount = () => {
+    const target = parseInt(+counter.getAttribute("data-target"));
+    const count = parseInt(+counter.innerText);
+    const increment = Math.trunc(target / speed);
+    console.log(increment);
+
+    if (count < target) {
+      counter.innerText = count + increment;
+      setTimeout(updateCount, 1);
+    } else {
+      count.innerText = target;
+    }
+  };
+  updateCount();
+});

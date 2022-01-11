@@ -23,26 +23,36 @@
        <div class="col-lg-12">
           <div class="card">
              <div class="card-header bg-primary text-white">
-               Boite de méssage
+               Boite de méssage <i class="ti-book"></i>
              </div>
 
              <div class="container">
             @if(Session::has('success'))
-            
-              <div class="alert alert-success alert-dismissable custom-success-box">
-                <strong> {{Session::get('success')}} </strong> 
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+
+               <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>{{Session::get('success')}}</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+          
+
             @endif
        </div>
 
         <!-- Message de succes en cas d'envois  -->
-        <form action="{{ route('repondre.store') }}"  class="p-4" method="post">
+        <form action="{{ url('repondre/{id}') }}"  class="p-4" method="post">
            @csrf
 
-            <div class="col-md-8 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" value="{{ $contact->email }}" disabled> 
+           <div class="row">
+             <div class="col-md-5 form-group mt-3 mt-md-0">
+               <input type="email" class="form-control bg-light" name="email" value="{{ $contact->email }}" disabled> 
              </div>
+             <div class="col-md-7 form-group mt-3 mt-md-0">
+               <input type="text" class="form-control bg-light" name="subject" value="{{ $contact->subject }}" disabled> 
+             </div>
+
+           </div>
 
           <div class="form-group mt-3">
             <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" rows="5" placeholder="Votre message complet"></textarea>
@@ -53,7 +63,7 @@
               @endif
           </div>
 
-          <div class="text-center"><button type="submit" name="send" class="btn btn-primary fw-bold mt-2">Envoyer le massage</button></div>
+          <div class="text-center"><button type="submit" name="send" class="btn btn-primary fw-bold mt-2"> <i class="ti-check"></i> Envoyer le massage</button></div>
         </form>
            </div>
       </div>

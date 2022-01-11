@@ -30,7 +30,7 @@
         </div>
     @endif
       <div class="card">
-      <div class="card-title p-4"><h4 class="badge badge-primary">Boite de reception </h4>  </div>
+      <div class="card-title p-4 bg-primary text-white">Boite de reception <i class="ti-book"></i>  </div>
         <div class="card-body">
 
                 <div class="table-responsive">

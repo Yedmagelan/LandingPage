@@ -233,22 +233,23 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <!-- <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span> -->
+            <span class='counter' data-target="2500">0</span>
             <p>Clients</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+          <span class='counter' data-target="1801">0</span>
             <p>Projets</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+          <span class='counter' data-target="1320">0</span>
             <p>Evènements</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+          <span class='counter' data-target="1201">0</span>
             <p>Formation et coaching</p>
           </div>
 
@@ -599,17 +600,19 @@
           </div>
         </div>
         <div class="container">
+          
             @if(Session::has('success'))
-            
-              <div class="alert alert-success alert-dismissable custom-success-box">
-                <strong> {{Session::get('success')}} </strong> 
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <strong>{{Session::get('success')}}</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                  </button>
               </div>
             @endif
        </div>
 
         <!-- Message de succes en cas d'envois  -->
-        <form action="{{ route('contact.store') }}"  class="p-4" method="post">
+        <form action="{{ route('contact.store') }}"  class="p-4 shadow" method="post">
            @csrf
 
           <div class="row">
@@ -643,7 +646,7 @@
             </div>
 
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="number" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="subject" placeholder="Exemple:+2250576654342">
+              <input type="number" class="form-control {{ $errors->has('phone') ? 'error' : '' }}" name="phone" id="subject" placeholder="Exemple:02250576654342">
               @if ($errors->has('phone'))
                 <div class="error">
                     {{ $errors->first('phone') }}
