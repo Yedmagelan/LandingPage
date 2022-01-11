@@ -32,7 +32,7 @@ class DashbordController extends Controller
     return view('dashbord.page.reponse',compact('contact'));
 }
 
- // postuler  Repondre aux message
+ // postuler  envoyer message
 public function repondre(Request $request){
   $ContactUs = $request->id;
   $this->validate($request, [
@@ -52,6 +52,7 @@ public function repondre(Request $request){
 ];
 
 Mail::to($request->email)->send(new repondreMail($value));
+return back()->with('reponse', 'Merci de nous avoir contacté.');
 
 }
 

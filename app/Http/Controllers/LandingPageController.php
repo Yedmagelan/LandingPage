@@ -19,7 +19,7 @@ class LandingPageController extends Controller
         $this->validate($request, [
           'name' => 'required',
           'email' => 'required|email',
-          'phone' => 'required',
+          'phone' => 'required|max:10',
           'subject'=>'required',
           'message' => 'required'
        ]);

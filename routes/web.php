@@ -23,4 +23,4 @@ Route::get('/dashbord', [DashbordController::class, 'ListeCont']);
 Route::get('/delete/{id}', [DashbordController::class, 'destroy']);
 Route::get('/email-details/{id}', [DashbordController::class, 'readmail']);
 Route::get('/repondre-mail/{id}', [DashbordController::class, 'RepondreMail']);
-Route::post('/repondre-mail', [DashbordController::class, 'repondre'])->name('repondre.store');
+Route::get('/repondre', [DashbordController::class, 'repondre'])->name('emai.store');

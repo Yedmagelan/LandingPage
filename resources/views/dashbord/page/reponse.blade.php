@@ -30,7 +30,7 @@
             @if(Session::has('success'))
 
                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                  <strong>{{Session::get('success')}}</strong>
+                  <strong>{{Session::get('reponse')}}</strong>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
                   </button>
@@ -41,7 +41,7 @@
        </div>
 
         <!-- Message de succes en cas d'envois  -->
-        <form action="{{ url('repondre/{id}') }}"  class="p-4" method="post">
+        <form action="{{ route('emai.store') }}"  class="p-4" method="get">
            @csrf
 
            <div class="row">

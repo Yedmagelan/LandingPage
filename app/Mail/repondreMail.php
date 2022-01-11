@@ -30,6 +30,6 @@ class repondreMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Contact Message')->view('dashbord.mail.repondre');
+        return $this->subject('Contact Message')->view('dashbord.mail.mail');
     }
 }
